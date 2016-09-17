@@ -1,4 +1,4 @@
-# pushthebutton
+# PushTheButton
 
 The purpose of this application is to give people dealing with addictions an easy and thought-free method of notifying their support network when they need help. 
 
