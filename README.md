@@ -18,4 +18,4 @@ Firebase
 - [ ] POST request to Twilio to contact sponsers
 - [ ] POST request to Spotify to play song
 - [ ] Retrieve IP Address of the Internet button
-- [ ] POST request to ... to retrieve latlng
+- [ ] GET request to freegeoip to retrieve geocode for given IP
