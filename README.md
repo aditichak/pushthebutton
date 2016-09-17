@@ -12,8 +12,10 @@ Twilio
 Spotify
 Firebase
 
-###To Do -
+###ToDo -
 - [ ] Make GET request from app to firebase and retrieve user's payload
 - [ ] Parse payload
-- [ ] Make POST request to Twilio to contact sponsers
-- [ ] Make POST request to Spotify to play song
+- [ ] POST request to Twilio to contact sponsers
+- [ ] POST request to Spotify to play song
+- [ ] Retrieve IP Address of the Internet button
+- [ ] POST request to ... to retrieve latlng
