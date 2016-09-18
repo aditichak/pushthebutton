@@ -1,0 +1,12 @@
+{
+  "TWILIO": {
+    "FROM": "+16043300755",
+    "SID": "ACf659ac152f25808ffe826a0b988fdb2e",
+    "TOKEN": "bb9dc3d1fe0b1f6017624f8d1fc3edc1"
+  },
+
+  "IBUTTON": {
+    "auth": "afbd932b7580f1005c4195c60b7065626697c6bb",
+    "bId": "270036000647343138333038"
+  }
+}
