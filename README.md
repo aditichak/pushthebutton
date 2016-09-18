@@ -8,11 +8,8 @@ This application also helps people in recovery keep track of the number of days 
 
 ## Integrations
 Internet Button
-
 Twilio
-
 ~~Spotify~~
-
 Firebase
 
 ###TODO -
