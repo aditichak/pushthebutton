@@ -5,6 +5,7 @@ var Particle = require('particle-api-js');
 SMS = new Mongo.Collection('sms');
 var oauth = "";
 var particle = new Particle();
+var ip = "";
 
 // Configure the Twilio client
 var twilioClient = new Twilio({
@@ -13,6 +14,16 @@ var twilioClient = new Twilio({
     token: Meteor.settings.TWILIO.TOKEN
 });
 var getTwilioMessages = Meteor.wrapAsync(twilioClient.client.messages.list, twilioClient.client.messages);
+
+particle.getEventStream({
+    deviceId: '270036000647343138333038',
+    auth: 'afbd932b7580f1005c4195c60b7065626697c6bb' }).then(
+    function(stream) {
+        stream.on('ip_address', function(data) {
+            console.log("Event: " + data.data);
+            ip = data.data;
+        });
+    });
 
 Meteor.methods({
     'sendSMS': function (opts) {
@@ -32,55 +43,16 @@ Meteor.methods({
         return result;
     },
     "getNumbers": function () {
-        this.unblock();
         return Meteor.http.call("GET", "https://pushthebutton-e86b3.firebaseio.com/users.json");
     },
     "button_push": function () {
         //Get your devices events
-        console.log(Meteor.settings.IBUTTON.bId);
-        particle.getEventStream({
-            deviceId: '270036000647343138333038',
-            auth: 'afbd932b7580f1005c4195c60b7065626697c6bb' }).then(
-            function(stream) {
-            stream.on('ip_address', function(data) {
-                console.log("Event: " + data.data);
-                // return data.data;
-                publish();
-            });
-        });
+        var results = Meteor.http.call("GET", "https://freegeoip.net/json/");
+        var lat = results.data.latitude;
+        var long = results.data.longitude;
+        return Meteor.http.call("GET","https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+long+"&key=AIzaSyAHf4GgalKK0VgCjyzza781M9P7w9febvo");
     }
 });
-
-function publish() {
-    Meteor.publish('count', function () {
-        // Build a document from scratch
-        var self = this;
-        var uuid = Meteor.uuid();
-        var count = Products.find().count();
-        // Assign initial Products count to document attribute
-        self.set('count', uuid, {count: count});
-
-        // Observe Products for additions and removals
-        var handle = Products.find().observe({
-            added: function (doc, idx) {
-                count++;
-                self.set('counts', uuid, {count: count});
-                self.flush();
-            },
-            removed: function (doc, idx) {
-                count--;
-                self.set('counts', uuid, {count: count});
-                self.flush();
-            }
-        });
-        self.complete();
-        self.flush();
-        self.onStop(function () {
-            handle.stop();
-        });
-    });
-}
-
 
 
 function updateMessages () {
