@@ -1,0 +1,45 @@
+<head>
+  <title>Hello Twilio, Meteor Here!</title>
+</head>
+
+<body>
+<h1>Hello Twilio, Meteor Here!</h1>
+
+{{> sendSMS}}
+
+{{> smsLog}}
+</body>
+
+<template name="sendSMS">
+  <div>
+    <label for="">
+      To: <input type="text" class="to">
+    </label>
+  </div>
+  <div>
+    <label for="">
+      Message:
+      <textarea name="" id="" cols="30" rows="10" class="message">
+        Hello From Twilio
+      </textarea>
+    </label>
+  </div>
+  <button>Click Me To Send a Message</button>
+</template>
+
+<template name="smsLog">
+  <h4>SMS Log</h4>
+  <ul>
+    {{#each sms}}
+    <li>
+      {{dateCreated}} -
+      {{#if isOutgoing}}
+      You said
+      {{else}}
+      {{from}} said
+      {{/if}}
+      "{{body}}"
+    </li>
+    {{/each}}
+  </ul>
+</template>
