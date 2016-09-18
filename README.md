@@ -7,9 +7,9 @@ At the push of a button, text messages are sent to their sponsers informing that
 This application also helps people in recovery keep track of the number of days they have remained abstinent and how often they feel the urge to misuse substances and relapse. 
 
 ## Integrations
-Internet Button
-Twilio
-~~Spotify~~
+Internet Button, 
+Twilio,
+~~Spotify~~,
 Firebase
 
 ###TODO -
