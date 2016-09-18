@@ -12,10 +12,12 @@ Twilio
 Spotify
 Firebase
 
-###ToDo -
+###TODO -
 - [x] Make GET request from app to firebase and retrieve user's payload
 - [x] Make GET request from app to internet button and retrieve ip address
-- [ ] POST request to Twilio to contact sponsers
-- [ ] POST request to Spotify to play song
-- [ ] Make GET request from app to freegeoip to get latlng
-- [ ] Retrieve formatted address from latlng
+- [x] POST request to Twilio to contact sponsers
+- [ ] ~~POST request to Spotify to play song~~
+- [x] Make GET request from app to freegeoip to get latlng
+- [x] Retrieve formatted address from latlng
+- [ ] Finish up user input views
+- [ ] Enable 1-click launch across button and web app
