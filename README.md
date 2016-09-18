@@ -12,7 +12,7 @@ Twilio,
 ~~Spotify~~,
 Firebase
 
-###TODO -
+##TODO -
 - [x] Make GET request from app to firebase and retrieve user's payload
 - [x] Make GET request from app to internet button and retrieve ip address
 - [x] POST request to Twilio to contact sponsers
