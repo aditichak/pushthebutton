@@ -22,5 +22,6 @@ Firebase
 - [ ] ~~POST request to Spotify to play song~~
 - [x] Make GET request from app to freegeoip to get latlng
 - [x] Retrieve formatted address from latlng
-- [ ] Finish up user input views
+- [x] Finish up user input views
+- [ ] Connect front end to server side app
 - [ ] Enable 1-click launch across button and web app
