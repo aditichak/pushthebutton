@@ -13,9 +13,9 @@ Spotify
 Firebase
 
 ###ToDo -
-- [ ] Make GET request from app to firebase and retrieve user's payload
-- [ ] Parse payload
+- [x] Make GET request from app to firebase and retrieve user's payload
+- [x] Make GET request from app to internet button and retrieve ip address
 - [ ] POST request to Twilio to contact sponsers
 - [ ] POST request to Spotify to play song
-- [ ] Retrieve IP Address of the Internet button
-- [ ] GET request to freegeoip to retrieve geocode for given IP
+- [ ] Make GET request from app to freegeoip to get latlng
+- [ ] Retrieve formatted address from latlng
