@@ -4,6 +4,8 @@ The purpose of this application is to give people dealing with addictions an eas
 
 At the push of a button, text messages are sent to their sponsers informing that their sponsee is struggling and needs help, along with the current location of the sponsee. 
 
+Future Work:
+
 This application also helps people in recovery keep track of the number of days they have remained abstinent and how often they feel the urge to misuse substances and relapse. 
 
 ## Integrations
